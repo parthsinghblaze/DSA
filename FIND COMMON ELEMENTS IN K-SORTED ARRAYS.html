@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array1 = [1, 5, 5, 6, 10];
+      let array2 = [3, 4, 5, 10];
+      let array3 = [5, 6, 7, 20];
+
+      function sameElement(kArray) {
+        let hashmap = {};
+        let answer = [];
+        let last = null;
+        for (let i = 0; i < kArray.length; i++) {
+          let currentArray = kArray[i];
+          for (let j = 0; j < currentArray.length; j++) {
+            let currentElement = currentArray[j];
+            if (currentElement !== last) {
+              if (!hashmap[currentElement]) {
+                hashmap[currentElement] = 1;
+              } else {
+                hashmap[currentElement]++;
+              }
+            }
+
+            last = currentElement;
+          }
+        }
+
+        for (let key in hashmap) {
+          if (hashmap[key] === kArray.length) {
+            answer.push(parseInt(key));
+          }
+        }
+
+        console.log(answer);
+      }
+
+      sameElement([array1, array2, array3]);
+    </script>
+
+    <!-- 
+    <script>
+      let array = [1, 2, 1, 2, 3, 4, 5, 3];
+
+      array.sort((a, b) => a - b);
+
+      function dublicateElement(array) {
+        let last;
+        let answer = [];
+
+        for (let i = 0; i < array.length; i++) {
+          let currentElement = array[i];
+
+          if (last === currentElement) {
+            answer.push(currentElement);
+          }
+
+          last = currentElement;
+        }
+
+        console.log("dublicate values are ", answer);
+      }
+
+      dublicateElement(array);
+    </script>
+     -->
+
+    <!-- <script>
+      let array = [1, 2, 1, 3, 4, 5, 5, 6, 7, 9];
+
+      array.sort((a, b) => a - b);
+
+      function dublicateElement(array) {
+        let last;
+        let answer = [];
+
+        for (let i = 0; i < array.length; i++) {
+          let currentElement = array[i];
+
+          if (last === currentElement) {
+            answer.push(currentElement);
+          }
+
+          last = currentElement;
+        }
+        console.log(answer);
+      }
+
+      dublicateElement(array);
+    </script> -->
+
+    <!-- 
+    <script>
+      function commonElements(kArray) {
+        let hashmap = {};
+        let last,
+          answer = [];
+
+        for (let i = 0; i < kArray.length; i++) {
+          let currentArray = kArray[i];
+          for (let j = 0; j < currentArray.length; j++) {
+            let currentElement = currentArray[j];
+
+            if (!hashmap[currentElement]) {
+              hashmap[currentElement] = 1;
+            } else {
+              hashmap[currentElement]++;
+            }
+
+            last = currentElement;
+          }
+        }
+
+        for (let prop in hashmap) {
+          if (hashmap[prop] === kArray.length) {
+            answer.push(parseInt(prop));
+          }
+        }
+      }
+
+      commonElements([
+        [1, 2, 3, 5],
+        [3, 4, 5],
+        [3, 4, 5],
+      ]);
+    </script>
+     -->
+
+    <!-- 
+    <script>
+      let array = [4, 5, 2, 4, 6, 7, 7, 7, 10, 11, 10];
+      let sortedArray = array.sort((a, b) => a - b);
+
+      function commonElement(sortedArray) {
+        let last = null;
+        let answer = [];
+
+        for (let i = 0; i < sortedArray.length; i++) {
+          if (last === sortedArray[i]) {
+            answer.push(sortedArray[i]);
+          }
+          last = sortedArray[i];
+        }
+
+        console.log([...new Set(answer)]);
+      }
+
+      commonElement(sortedArray);
+    </script>
+     -->
+
+    <!-- 
+    <script>
+      let hashmap = {};
+
+      function commonElements(kArray) {
+        let hashmap = {};
+        let last,
+          answer = [];
+
+        for (let i = 0; i < kArray.length; i++) {
+          let currentArray = kArray[i];
+          last = null;
+          for (let j = 0; j < currentArray.length; j++) {
+            let currentElement = currentArray[j];
+            if (last != currentElement) {
+              if (!hashmap[currentElement]) {
+                hashmap[currentElement] = 1;
+              } else {
+                hashmap[currentElement]++;
+              }
+            }
+            last = currentElement;
+          }
+        }
+
+        for (var prop in hashmap) {
+          if (hashmap[prop] === kArray.length) {
+            answer.push(parseInt(prop));
+          }
+        }
+        console.log(answer);
+      }
+
+      commonElements([
+        [15, 5, 10],
+        [3, 4, 5, 5, 10],
+        [5, 5, 10, 20],
+      ]);
+    </script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // SPIRAL PRINT
+      var M = [
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10],
+        [11, 12, 13, 14, 15],
+        [16, 17, 18, 19, 20],
+      ];
+
+      function spiralPrintPractice(array) {
+        let top = 0;
+        let left = 0;
+        let bottom = array.length - 1;
+        let rigth = array[0].length - 1;
+        let answer = [];
+
+        for (let i = 0; i <= rigth; i++) {
+          answer.push(array[top][i]);
+        }
+      }
+
+      spiralPrintPractice(M);
+
+      //   function spiralPrint(array) {
+      //     let topRow = 0,
+      //       leftCol = 0,
+      //       btnRow = M.length - 1,
+      //       rightCol = M[0].length - 1;
+
+      //     while (topRow < btnRow && leftCol < rightCol) {
+      //       for (let col = 0; col <= rightCol; col++) {
+      //         console.log(array[topRow][col]);
+      //       }
+      //       topRow++;
+      //     }
+      //   }
+
+      //   spiralPrint(M);
+    </script>
+  </body>
+</html>

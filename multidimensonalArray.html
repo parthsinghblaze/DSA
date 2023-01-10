@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [
+        [1, 2, 3, 4, 5],
+        [6, 7, 8, 9, 10],
+        [11, 12, 13, 14, 15],
+        [16, 17, 18, 19, 20],
+      ];
+
+      function spiral(array) {
+        let topRow = 0;
+        let leftCol = 0;
+        let btnRow = array.length - 1;
+        let rightCol = array[0].length - 1;
+
+        while (topRow < btnRow && leftCol < rightCol) {
+          for (let col = 0; col <= rightCol; col++) {
+            console.log(array[topRow][col]);
+          }
+          topRow++;
+        }
+      }
+
+      spiral(array);
+      //   console.log([
+      //     1, 2, 3, 4, 5, 10, 15, 20, 19, 18, 17, 16, 11, 6, 7, 8, 9, 14, 23, 12,
+      //   ]);
+    </script>
+
+    <!-- 
+    <script>
+      let jaggedArray;
+
+      function matrix(rows, column) {
+        jaggedArray = new Array(rows);
+        for (let i = 0; i < column; i++) {
+          jaggedArray[i] = new Array(rows);
+        }
+
+        jaggedArray[0][0] = 1;
+        jaggedArray[0][1] = 2;
+        jaggedArray[0][2] = 3;
+
+        console.log(jaggedArray);
+      }
+
+      matrix(3, 3);
+    </script>
+     -->
+  </body>
+</html>
